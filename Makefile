@@ -1,17 +1,11 @@
-CC=gcc
-CFLAGS=-c -Wall
+compile: main.o lib.o
+	gcc -o execute main.o lib.o
 
-all: main
-
-main: main.o lib.o
-	$(CC) main.o lib.o -o main
-
-main.o: main.c lib.h
-	$(CC) $(CFLAGS) main.c
-
+main.o : main.c lib.h
+	gcc -c main.c
 lib.o: lib.c lib.h
-	$(CC) $(CFLAGS) lib.c
-	
+	gcc -c lib.c
+
 clean:
-	rm -rf *o main
+	rm -f *.o execute
 

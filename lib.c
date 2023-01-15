@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "lib.h"
 
 
 double power(double base, int exponent)
 {
     double result = 1;
+
     for (int i = 0; i < exponent; i++)
         result *= base;
+        
     return result;
 }
 
